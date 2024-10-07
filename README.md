@@ -45,10 +45,6 @@ field "main"
 
 This program outputs `hello fetale!`.
 
-## Documentation
-
-For detailed documentation, see [here](link_to_your_documentation).
-
 ## Contributions
 
 Contributions to Fetale are welcome! We welcome bug reports, suggestions for new features, and pull requests.
