@@ -1,0 +1,6 @@
+# fetale template
+
+
+field "main"{
+	puts: "hello world!"
+}
