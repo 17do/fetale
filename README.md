@@ -18,7 +18,7 @@ To use Fetale, please follow the steps below to install it.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/fetale.git
+   git clone https://github.com/17do/fetale.git
    ```
 2. Go to the directory:
    ```bash
