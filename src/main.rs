@@ -1,20 +1,25 @@
 #![allow(warnings)]
 mod macros;
 mod parser;
-use std::{collections::HashMap, fs, io};
+use clap::{Parser, Subcommand};
+use std::{collections::HashMap, env, fs, io};
 
-fn main() {
-    let mut str_ = String::new();
-    load_file("/home/inado/develop/tval/module.fet", &mut str_);
-    parser::parse(str_.as_str());
+#[derive(Parser)]
+#[command(name = "fet")]
+#[command(about = "the fetale programing language")]
+struct Args {
+    filename: String,
 }
 
-#[test]
-fn test() {
-    let mut str_ = String::new();
-    load_file("/home/inado/develop/tval/module.fet", &mut str_);
-    println!("{}", str_);
-    parser::parse(str_.as_str());
+fn main() {
+    let args = Args::parse();
+    match args {
+        _ => {
+            let mut str_ = String::new();
+            load_file(&args.filename, &mut str_);
+            parser::parse(str_.as_str());
+        }
+    }
 }
 
 fn load_file(file_path: &str, file_str: &mut String) {

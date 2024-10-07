@@ -38,12 +38,13 @@ pub fn parse(parse_text: &str) {
             }
             continue;
         }
-        if c == '\n'{
+        if c == '\n' {
             line += 1;
         }
 
         match c {
-            '{' => { // ブロックの開始
+            '{' => {
+                // ブロックの開始
                 if !db_quo {
                     block += 1;
                     if main {
@@ -51,10 +52,16 @@ pub fn parse(parse_text: &str) {
                     }
                 }
             }
-            '}' => {  // ブロックの終了
+            '}' => {
+                // ブロックの終了
                 if !db_quo {
-                    if block == 0{
-                        parseerr!(line, "Unexpected closing brace '}'", "Closing brace without matching opening brace" ,"Unexpected closing brace");
+                    if block == 0 {
+                        parseerr!(
+                            line,
+                            "Unexpected closing brace '}'",
+                            "Closing brace without matching opening brace",
+                            "Unexpected closing brace"
+                        );
                     }
                     block -= 1;
                     if main_field {
@@ -65,9 +72,14 @@ pub fn parse(parse_text: &str) {
             }
             ' ' if !db_quo => continue,       // 空白を無視
             '#' if !db_quo => comment = true, // コメント開始
-            '$' if block >= 1 && !db_quo => {
-                if var_state != VarState::None{
-                    parseerr!(line,"Unexpected variable declaration" ,"Variable declaration must start from a new line", "Unexpected variable declaration");
+            '$' if block >= 1 && !db_quo => { // 変数
+                if var_state != VarState::None {
+                    parseerr!(
+                        line,
+                        "Unexpected variable declaration",
+                        "Variable declaration must start from a new line",
+                        "Unexpected variable declaration"
+                    );
                 }
                 // 変数名の開始を検出
                 var_state = VarState::StartVar;
@@ -88,8 +100,13 @@ pub fn parse(parse_text: &str) {
             }
             '=' if block >= 1 && !db_quo => {
                 // 変数名が終了し、値の定義を開始
-                if var_state != VarState::StartVar{
-                    parseerr!(line, "Unexpected '=' character", "Assignment operator must follow a variable name","Unexpected character");
+                if var_state != VarState::StartVar {
+                    parseerr!(
+                        line,
+                        "Unexpected '=' character",
+                        "Assignment operator must follow a variable name",
+                        "Unexpected character"
+                    );
                 }
                 if var_state == VarState::StartVar {
                     var_state = VarState::StartValue;
@@ -101,22 +118,24 @@ pub fn parse(parse_text: &str) {
                     // 改行で値の定義が終了
                     finalize_variable(&mut vars, &temp_var, &temp_value, &mut var_state);
 
-                    if !temp_text.trim().is_empty() {
-                    }
+                    if !temp_text.trim().is_empty() {}
                 }
             }
             ':' if block >= 1 && !db_quo && main => {
                 if temp_text.trim() != "puts" {
-                    parseerr!(line, "Unexpected ':' character", "Colon must follow 'puts' keyword", "Unexpected character");
+                    parseerr!(
+                        line,
+                        "Unexpected ':' character",
+                        "Colon must follow 'puts' keyword",
+                        "Unexpected character"
+                    );
                 }
                 in_puts = true;
                 temp_text.clear();
             }
             _ => {
                 if block >= 1 {
-                    if in_puts && db_quo{
-
-                    }
+                    if in_puts && db_quo {}
                     // ブロック内での文字の処理
                     match var_state {
                         VarState::StartVar => temp_var.push(c),     // 変数名を追加
@@ -180,4 +199,3 @@ fn finalize_variable(
         *var_state = VarState::None; // 状態をリセット
     }
 }
-

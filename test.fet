@@ -1,6 +1,7 @@
 # fetale template
 
 
-field "main"{
-	puts: "hello world!"
+field "main"
+{
+	$fsf = "fafsd"
 }
