@@ -1,54 +1,49 @@
-# The Fetale Programing Language
+# The Fetale Programming Language
 
-Fetale is a new programming language with a simple and intuitive syntax. The language is easy to use for beginners and experienced programmers alike and is suitable for a wide variety of applications.
+Fetale is a new programming language with a simple and intuitive syntax. It is easy to use for beginners and experienced programmers alike, making it suitable for a wide variety of applications.
 
-## Features.
+## Features:
 
-- **Simple syntax**: programs are easy to understand and intuitive to write.
+- **Simple syntax**: Programs are easy to understand and intuitive to write.
 - **Field types**: All operations are based on fields and do not require function definitions.
-- **JSON-like syntax**: Inspired by JSON, data representation is easy.
+- **JSON-like syntax**: Inspired by JSON, data representation is straightforward.
 
 ## Installation
 
 To use Fetale, please follow the steps below to install it.
 
 > [!WARNING]
-> FETALE is under development and cannot be installed yet.<br>
-> If you want to install it, please clone this repository and build it
+> FETALE is currently under development and cannot be installed yet.<br>
+> If you want to install it, please clone this repository and build it.
 
-1. clone the repository.
-
-   Clone the repository.
-   ```
+1. Clone the repository:
+   ```bash
    git clone https://github.com/yourusername/fetale.git
    ```
- 2. Go to the directory.
-
+2. Go to the directory:
    ```bash
    cd fetale
    ```
-3. Build the program.
-
-   Build the program: 
+3. Build the program:
    ```bash
    cargo build --release
    ```
 
-## How to use
+## How to Use
 
-The basic program is written as follows.
+The basic program is written as follows:
 
 ```fetale
-# this is comment
+# this is a comment
 
-field “main”
+field "main"
 {
-  $text = “hello fetale!”
+  $text = "hello fetale!"
   puts: $text
 }
 ```
 
-This program outputs ``hello fetale!``.
+This program outputs `hello fetale!`.
 
 ## Documentation
 
@@ -58,8 +53,8 @@ For detailed documentation, see [here](link_to_your_documentation).
 
 Contributions to Fetale are welcome! We welcome bug reports, suggestions for new features, and pull requests.
 
-1. fork it (``fork``)
-2. create a branch (``branch``)
+1. Fork it (`fork`).
+2. Create a branch (`branch`).
 3. Create a branch (`git checkout -b feature/YourFeature`).
 4. Commit your changes (`git commit -m 'Add some feature'`).
 5. Push (`git push origin feature/YourFeature`).
@@ -71,4 +66,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-We hope you enjoy your programming life with Fetale!
+We hope you enjoy your programming journey with Fetale!
