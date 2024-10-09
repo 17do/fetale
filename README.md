@@ -16,6 +16,7 @@ To use Fetale, please follow the steps below to install it.
 > FET is currently under development and cannot be installed yet.<br>
 > If you want to install it, please clone this repository and build it.
 
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/17do/fet.git
@@ -32,6 +33,9 @@ To use Fetale, please follow the steps below to install it.
 ## How to Use
 
 The basic program is written as follows:
+> [!IMPORTANT]
+> Note that the following syntax is still being created and may change
+
 
 ```fet
 # this is a comment
