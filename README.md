@@ -22,7 +22,7 @@ To use Fetale, please follow the steps below to install it.
    ```
 2. Go to the directory:
    ```bash
-   cd fetale
+   cd fet
    ```
 3. Build the program:
    ```bash
