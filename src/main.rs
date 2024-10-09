@@ -6,7 +6,7 @@ use std::{collections::HashMap, env, fs, io};
 
 #[derive(Parser)]
 #[command(name = "fet")]
-#[command(about = "The fetale programming language interpreter")]
+#[command(about = "The fet programming language interpreter")]
 #[command(version = env!("CARGO_PKG_VERSION"))]
 struct Args {
     filename: String,
