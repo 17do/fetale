@@ -1,6 +1,6 @@
-# The Fetale Programming Language
+# The Fet Programming Language
 
-Fetale is a new programming language with a simple and intuitive syntax. It is easy to use for beginners and experienced programmers alike, making it suitable for a wide variety of applications.
+Fet is a new programming language with a simple and intuitive syntax. It is easy to use for beginners and experienced programmers alike, making it suitable for a wide variety of applications.
 
 ## Features:
 
@@ -13,12 +13,12 @@ Fetale is a new programming language with a simple and intuitive syntax. It is e
 To use Fetale, please follow the steps below to install it.
 
 > [!WARNING]
-> FETALE is currently under development and cannot be installed yet.<br>
+> FET is currently under development and cannot be installed yet.<br>
 > If you want to install it, please clone this repository and build it.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/17do/fetale.git
+   git clone https://github.com/17do/fet.git
    ```
 2. Go to the directory:
    ```bash
@@ -33,21 +33,21 @@ To use Fetale, please follow the steps below to install it.
 
 The basic program is written as follows:
 
-```fetale
+```fet
 # this is a comment
 
 field "main"
 {
-  $text = "hello fetale!"
+  $text = "hello fet!"
   puts: $text
 }
 ```
 
-This program outputs `hello fetale!`.
+This program outputs `hello fet!`.
 
 ## Contributions
 
-Contributions to Fetale are welcome! We welcome bug reports, suggestions for new features, and pull requests.
+Contributions to Fet are welcome! We welcome bug reports, suggestions for new features, and pull requests.
 
 1. Fork it (`fork`).
 2. Create a branch (`branch`).
@@ -62,4 +62,4 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-We hope you enjoy your programming journey with Fetale!
+We hope you enjoy your programming journey with Fet!
